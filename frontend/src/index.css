@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+}
+
+/* animowane gwiazdy */
+.stars {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent url("/public/star.jpg") repeat;
+  animation: stars 100s linear infinite;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+
+@keyframes stars {
+  from { background-position: 0 0; }
+  to { background-position: -10000px 5000px; }
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  color: #000;
+}
