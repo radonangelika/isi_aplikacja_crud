@@ -20,7 +20,7 @@ function Register() {
     e.preventDefault();
     setError("");
 
-    axios.post("http://localhost:3000/api/auth/register", form)
+    axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, form)
       .then(() => {
         alert("Rejestracja zakończona sukcesem!");
         navigate("/login");
