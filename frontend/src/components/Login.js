@@ -19,7 +19,7 @@ function Login() {
     e.preventDefault();
     setError("");
 
-    axios.post("http://localhost:3000/api/auth/login", form)
+    axios.post("https://salon-backend-87g8.onrender.com/api/auth/login", form)
       .then(res => {
         const user = res.data.user;
 
