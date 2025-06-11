@@ -3,34 +3,31 @@ const cors = require("cors");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:3001"
-};
+// POZWÓL NA WSZYSTKIE POŁĄCZENIA (z frontu na Renderze też)
+app.use(cors());
 
-app.use(cors(corsOptions));
-
-// parse requests of content-type - application/json
+// parse requests
 app.use(express.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
-console.log("111")
+
+console.log("111");
+
 const db = require("./app/models");
-
 db.authenticate();
-db.sync(); // UWAGA: to usuwa WSZYSTKIE dane z bazy!
+db.sync(); // UWAGA: usuwa dane przy starcie!
 
-// simple route
+// test route
 app.get("/", (req, res) => {
   res.json({ message: "To ja SERWER!!!." });
 });
 
+// routes
 require("./app/routes/klientka.routes")(app);
-console.log("11222")
+require("./app/routes/auth.routes")(app);
 
-// set port, listen for requests
+console.log("11222");
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
-require("./app/routes/auth.routes")(app);
