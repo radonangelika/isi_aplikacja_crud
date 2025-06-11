@@ -47,4 +47,5 @@ Projekt został wdrożony jako dwie osobne usługi:
 - **Build Command**: `npm run build`
 - **Publish Directory**: `build`
 - **Zmienna środowiskowa**:
-
+## Link do testowania
+https://salon-frontend-v8vf.onrender.com
