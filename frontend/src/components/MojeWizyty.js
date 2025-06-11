@@ -7,7 +7,7 @@ function MojeWizyty() {
   const user = getUser();
 
   useEffect(() => {
-    axios.get(`http://localhost:3000/api/klientki/uzytkownik/${user.id}`)
+    axios.get(`https://salon-backend-87g8.onrender.com/api/klientki/uzytkownik/${user.id}`)
       .then(res => setWizyty(res.data))
       .catch(err => console.error(err));
   }, [user.id]);
