@@ -20,7 +20,7 @@ function Register() {
     e.preventDefault();
     setError("");
 
-    axios.post(`${process.env.REACT_APP_API_URL}/api/auth/login`, form)
+    axios.post(`https://salon-backend-87g8.onrender.com/api/auth/login`, form)
       .then(() => {
         alert("Rejestracja zakończona sukcesem!");
         navigate("/login");
