@@ -30,7 +30,7 @@ function Umow() {
 };
     console.log("Dane do wysłania:", nowaWizyta);
 
-    axios.post("http://localhost:3000/api/klientki", nowaWizyta)
+    axios.post("https://salon-backend-87g8.onrender.com/api/klientki", nowaWizyta)
       .then(() => {
         alert("Wizyta została umówiona!");
         navigate("/moje-wizyty");
