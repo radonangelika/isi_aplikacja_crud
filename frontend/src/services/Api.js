@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API = "http://localhost:3000/api/klientki";
+const API = "https://salon-backend-87g8.onrender.com/api/klientki";
 
 export const getAll = () => axios.get(API);
 export const getById = (id) => axios.get(`${API}/${id}`);
